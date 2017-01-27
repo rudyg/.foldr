@@ -4,7 +4,7 @@ $(document).ready( function(){
 	
 	function createIcons(){
 
-		var $icon = $('img[alt*="\[   \]"], img[alt*="\[IMG\]"], img[alt*="\[TXT\]"], img[alt*="\[VID\]"]'),
+		var $icon = $('img[alt*="\[   \]"]'),
 			$folder = $('img[alt*="\[DIR\]"]');
 		
 		$icon.each(function(){
@@ -13,7 +13,7 @@ $(document).ready( function(){
 				$initial 	= $name.charAt(0).toUpperCase(),
 				$splitName 	= $name.split('.'),
 				$extension 	= $splitName[$splitName.length-1],
-				$imageIcons = ['jpg', 'jpeg', 'png', 'svg'],
+				$imageIcons = ['jpg', 'jpeg', 'svg'],
 				$videoIcons = ['mp4', 'webm'],
 				$devFiles	= ['js', 'json'],
 				$cssFiles	= ['css', 'sass', 'less'],

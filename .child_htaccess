@@ -1,7 +1,0 @@
-AuthType Basic
-AuthName "Restricted Area"
-AuthUserFile /Applications/MAMP/htdocs/foldr/.foldr/.htpasswd
-Require valid-user
-
-HeaderName ./.foldr/header.html
-ReadmeName ./.foldr/footer.html

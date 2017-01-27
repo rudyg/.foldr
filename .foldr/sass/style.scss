@@ -19,9 +19,6 @@ $rowHover: #f6f6f6;
 
 html {
 	font-size: 62.5%;
-	min-height: 100%;
-	border-top: 10px solid $bodyBorder;
-	border-bottom: 10px solid $bodyBorder;
 }
 
 body {
@@ -33,6 +30,8 @@ body {
 	font-family: 'Raleway', sans-serif;
 	letter-spacing: .05rem;
 	padding: 20px;
+	border-top: 10px solid $bodyBorder;
+	border-bottom: 10px solid $bodyBorder;
 }
 
 /******************************

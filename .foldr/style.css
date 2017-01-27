@@ -1080,3 +1080,4 @@ tr.parent a[href^="/"] { color: #9099A3; }
 
 /****************************** MEDIA QUERIES */
 @media screen and (max-width: 600px) { body { padding: 20px 10px; } }
+
