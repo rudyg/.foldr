@@ -1,0 +1,294 @@
+/******************************
+ .foldr
+ by Rudy GUILLERM / GRID
+
+ Inspired by Apaxy
+******************************/
+$bodyBorder: #ECEEF1;
+$text: #242424;
+$link: #242424;
+$rowHover: #f6f6f6;
+/******************************
+ HTML
+******************************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	min-height: 100%;
+	border-top: 10px solid $bodyBorder;
+	border-bottom: 10px solid $bodyBorder;
+}
+
+body {
+	position: relative;
+	color: $text;
+	font-weight: 400;
+	font-size: 1.6rem;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: .05rem;
+	padding: 20px;
+}
+
+/******************************
+ FONTS
+******************************/
+@import url('//fonts.googleapis.com/css?family=Raleway:400,500,700');
+@import "./fonts.scss";
+
+/******************************
+ LAYOUT
+******************************/
+header{
+
+}
+
+.wrapper{
+	padding: 50px 0;
+}
+
+footer{
+	font-size: 1rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+/******************************
+ CONTENT
+******************************/
+a {
+	color: $link;
+	text-decoration:none;
+}
+
+/******************************
+ DIRECTORY LISTING
+******************************/
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+tr {
+	outline: 0;
+	border: 0;
+}
+tr:not(:first-of-type):hover {
+	background: $rowHover;
+	transition: background 200ms ease-in-out;
+}
+th {
+	text-align: left;
+	font-size: .75em;
+}
+tr td{
+	
+}
+/* 2nd Column: Filename */
+th + th {
+	width:65%;
+}
+/* 3rd Column: Last Modified */
+th + th + th {
+}
+/* 4th Column: Size */
+th + th + th + th {
+	width:5%;
+}
+
+tr td:nth-of-type(1) {
+	padding-left:10px;
+	padding-right:10px;
+}
+
+tr td:nth-of-type(1) a{
+	position: relative;
+	opacity: .3;
+	transition: opacity 200ms ease-in-out;
+}
+
+
+
+tr:hover td:nth-of-type(1) a{
+	opacity: 1;
+	transition: opacity 200ms ease-in-out;
+}
+
+tr td:nth-of-type(2) {
+	font-size: 12px;
+	font-weight: 500;
+	padding: 0 10px 0 0;
+	transition: color 200ms ease-in-out, padding 200ms ease-in-out;
+
+	& a{
+		line-height: 30px;
+		padding: 10px 0;
+	}
+}
+
+tr:hover td:nth-of-type(2) {
+	color: #000000;
+	padding-left: 2px;
+	transition: padding 200ms ease-in-out, color 200ms ease-in-out 200ms;
+}
+
+tr td:nth-of-type(3) {
+	font-size: 12px;
+}
+
+tr td:nth-of-type(4){
+	font-size: 12px;
+}
+
+td {
+	/*padding: 10px 0;*/
+	outline:0;
+	border:0;
+	border-bottom:1px solid #edf1f5;
+	vertical-align:middle;
+	text-align:left;
+	-webkit-transition:background 300ms ease-in-out;
+	   -moz-transition:background 300ms ease-in-out;
+	    -ms-transition:background 300ms ease-in-out;
+	     -o-transition:background 300ms ease-in-out;
+	        transition:background 300ms ease-in-out;
+}
+td a{
+	position: relative;
+	display: block;
+}
+tr.parent a[href^="/"] {
+	color:#9099A3;
+}
+	.parent a[href^="/"]:hover {
+		color:#2281d0;
+	}
+
+
+/******************************
+ ICONS
+******************************/
+.icon{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+}
+
+/* Folders */
+.initial{
+	color: #FFFFFF;
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin-top: 2px;
+
+	&.folder{
+		color: #FFFFFF;
+	}
+
+	&.file{
+		color: #000000;
+	}
+}
+
+/* Files */
+[class^="icon-"], [class*=" icon-"]{
+	font-size: 1.2rem;
+	margin-top: 3px;
+}
+
+.icon-css{
+
+	&:before{
+		font-size: 1.1rem;
+	}
+}
+
+.icon-git{
+	
+	font-size: 1.4rem;
+	margin-top: 2px;
+
+	&:before{
+		color: #f74c16;
+	}
+
+	&.folder:before{
+		color: #FFFFFF;
+	}
+
+}
+
+.icon-npm{
+
+	&:before{
+		color: #cd3632;
+	}
+
+}
+
+.icon-adobe{
+	position: absolute;
+	display: inline-block;
+	color: #FFFFFF;
+	font-family:'Raleway', sans-serif !important;
+	font-size: 8px;
+	font-weight: 700;
+	width: 21px;
+	line-height: 10px;
+	left: auto;
+	right: -7px;
+	padding: 1px;
+	margin: 4px auto 0;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 2px;
+	border: solid 1px #000000;
+
+	&.ai{
+		color: #FC762B;
+		border-color: #FC762B;
+		background-color: #311900;
+	}
+
+	&.psd{
+		color: #42dbfe;
+		border-color: #42dbfe;
+		background-color: #1f1d3f;
+	}
+	
+	&.pdf{
+		color: #FFFFFF;
+		border-color: #3b201b;
+		background-color: #ee0e00;
+	}
+
+}
+
+.icon-bin{
+
+	&.folder:before{
+		color: #FFFFFF;
+	}
+}
+
+.icon-embed2{
+	&.folder:before{
+		color: #FFFFFF;
+	}
+}
+
+/******************************
+ MEDIA QUERIES
+******************************/
+@media screen and (max-width: 600px){
+	body {
+		padding: 20px 10px;
+	}
+}
+

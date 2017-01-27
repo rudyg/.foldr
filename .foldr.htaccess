@@ -1,0 +1,126 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks +IconHeight=30 +IconWidth=35
+
+    	# META VIEWPORT
+    	#IndexHeadInsert "<meta name=\"robots\" content=\"noindex, nofollow\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+
+	# HIDE http://foldr.grid-labs.com/.theme DIRECTORY
+	IndexIgnore .htaccess /.foldr
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace {FOLDERNAME} with your directory URL eg:
+# If your directory is http://mywebsite.com/.
+# you would change to:
+#
+# AddIcon /foldr//.foldr/icons/blank.png ^^BLANKICON^^
+#
+
+	#AddIcon /foldr//.foldr/icons/blank.png ^^BLANKICON^^
+	#AddIcon /foldr//.foldr/icons/folder.svg ^^DIRECTORY^^
+	#AddIcon /foldr//.foldr/icons/folder-parent.svg ..
+	
+	#AddIconByType (TXT,/foldr//.foldr/icons/default.svg) text/*
+	#AddIconByType (IMG,/foldr//.foldr/icons/image.svg) image/*
+	AddIconByType (SND,/foldr//.foldr/icons/audio.png) audio/*
+	#AddIconByType (VID,/foldr//.foldr/icons/video.svg) video/*
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /foldr//.foldr/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /foldr//.foldr/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	
+	AddIcon /foldr//.foldr/icons/bmp.png .bmp
+	AddIcon /foldr//.foldr/icons/c.png .c
+	AddIcon /foldr//.foldr/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /foldr//.foldr/icons/cd.png .iso
+	AddIcon /foldr//.foldr/icons/cpp.png .cpp
+	
+	AddIcon /foldr//.foldr/icons/deb.png .deb
+	AddIcon /foldr//.foldr/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	
+	
+	AddIcon /foldr//.foldr/icons/exe.png .exe
+	
+	AddIcon /foldr//.foldr/icons/h.png .h
+	
+	AddIcon /foldr//.foldr/icons/ico.png .ico
+	AddIcon /foldr//.foldr/icons/java.png .jar
+	
+	AddIcon /foldr//.foldr/icons/js.svg .js .json
+	
+	AddIcon /foldr//.foldr/icons/package.png .pkg .dmg
+	
+	
+	AddIcon /foldr//.foldr/icons/playlist.png .m3u .m3u8 .pls .pls8
+	
+	AddIcon /foldr//.foldr/icons/ps.png .ps
+	
+	AddIcon /foldr//.foldr/icons/py.png .py
+	AddIcon /foldr//.foldr/icons/rar.png .rar
+	AddIcon /foldr//.foldr/icons/rb.png .rb
+	AddIcon /foldr//.foldr/icons/rpm.png .rpm
+	AddIcon /foldr//.foldr/icons/rss.png .rss
+	AddIcon /foldr//.foldr/icons/script.png .bat .cmd .sh
+	AddIcon /foldr//.foldr/icons/sql.png .sql
+	AddIcon /foldr//.foldr/icons/tiff.png .tiff .tif
+	AddIcon /foldr//.foldr/icons/default.svg .txt .nfo
+	
+	
+	
+	AddIcon /foldr//.foldr/icons/zip.svg .zip
+
+	DefaultIcon /foldr//.foldr/icons/default.svg
+
+	# DEVELOPMENT FILES
+	#AddIcon /foldr//.foldr/icons/php.svg .php .phtml
+	#AddIcon /foldr//.foldr/icons/html.svg .html .xhtml .shtml .htm .URL .url
+	#AddIcon /foldr//.foldr/icons/css.svg .css .sass .scss
+	#AddIcon /foldr//.foldr/icons/xml.svg .xml
+	#AddIcon /foldr//.foldr/icons/git.svg .gitignore
+
+	# DOCUMENT FILES
+	#AddIcon /foldr//.foldr/icons/pdf.svg .pdf
+	#AddIcon /foldr//.foldr/icons/markdown.svg .md
+
+	# FONT FILES
+	#AddIcon /foldr//.foldr/icons/font.svg .ttf .eot .woff .woff2
+
+	# IMAGES FILES
+	#AddIcon /foldr//.foldr/icons/svg.svg .svg .svgz
+	#AddIcon /foldr//.foldr/icons/image.svg .jpg .jpeg .jpe .png .gif
+
+	# VIDEO FILES
+	#AddIcon /foldr//.foldr/icons/video.svg .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv .webm
+
+	# ADOBE FILES
+	#AddIcon /foldr//.foldr/icons/psd.svg .psd
+	#AddIcon /foldr//.foldr/icons/ai.svg .ai .eps
+
+	# OTHER FILES
+	#AddIcon /foldr//.foldr/icons/bin.svg .bin .hex
+
+#
+# THEME FILES
+#
+	# Global CSS
+	IndexStyleSheet "/foldr/.foldr/style.css"
+	
+	# Custom .foldr
+	HeaderName /foldr/.foldr/header.html
+	ReadmeName /foldr/.foldr/footer.html
